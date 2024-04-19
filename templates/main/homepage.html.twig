@@ -1,0 +1,48 @@
+<h1>Starshop: your monopoly-busting options for Starship parts!</h1>
+
+<div>Browse through {{ numberOfStarships }} starships!
+
+    <div>
+        <h2>Say-Something-Syntax:</h2>
+        <ul>
+            <li> rendre la valeur d'une variable : {{ numberOfStarships }} </li>
+            <li> un calcul sur sa valeur, ici *10 : {{ numberOfStarships * 10 }} </li>
+            <li> son nom en string : {{ 'numberOfStarships' }} </li>
+        </ul>
+    </div>
+    <div>
+        <h2>Do-Something-Syntax: </h2>
+        {% if numberOfStarships > 400 %}
+            <p>
+                That's a shipload of starships! (if more than 400)
+            </p>
+        {% endif %}
+        
+        {# Ceci est un commentaire, et en-dessous un test #}
+        {% if numberOfStarships is defined %}
+            <p>Tu as défini ta variable, c'est bien.</p>
+        {% endif %}
+    </div>
+
+    <div>
+        <h2>Render complex data like an associative array:</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>{{ myShip.name }} </td>
+            </tr>
+            <tr>
+                <th>Class</th>
+                <td>{{ myShip.class }} </td>
+            </tr>
+            <tr>
+                <th>Captain</th>
+                <td>{{ myShip.captain }} </td>
+            <tr>
+                <th>Status</th>
+                <td>{{ myShip.status }} </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
