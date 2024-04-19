@@ -1,3 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() }} by Starshop.{% endblock %}
+
+{% block body %}
+
 <h1>Starshop: your monopoly-busting options for Starship parts!</h1>
 
 <div>Browse through {{ numberOfStarships }} starships!
@@ -13,11 +19,8 @@
     <div>
         <h2>Do-Something-Syntax: </h2>
         {% if numberOfStarships > 400 %}
-            <p>
-                That's a shipload of starships! (if more than 400)
-            </p>
+            <p>That's a shipload of starships! (if more than 400)</p>
         {% endif %}
-        
         {# Ceci est un commentaire, et en-dessous un test #}
         {% if numberOfStarships is defined %}
             <p>Tu as défini ta variable, c'est bien.</p>
@@ -45,4 +48,4 @@
         </table>
     </div>
 </div>
-
+{% endblock %}
