@@ -12,10 +12,11 @@ use Symfony\Component\Routing\Attribute\Route;
 class StarshipApiController extends AbstractController
 {
     #[Route('/api/starships')]
-    public function getCollection(LoggerInterface $logger, StarshipRepository $repository): Response {
+    public function getCollection(StarshipRepository $repository): Response {
         
+        // en passant LoggerInterface $logger en argument, utilisation du service de log par auto-wiring:
         //dd($logger);
-        $logger->info('Starship collection retrieved');
+        //$logger->info('Starship collection retrieved');
         
         //dd($repository);
         $starships = $repository->findAll();
