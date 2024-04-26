@@ -39,4 +39,15 @@ class StarshipRepository
             )
             ];
     }
+
+    public function find(int $id) : ?Starship {
+        foreach ($this->findAll() as $starship) {
+            //getId() est une fonction de Entity/Starship !
+            if ($starship->getId() === $id) {
+                return $starship;
+            }
+        }
+
+        return null;
+    }
 }
