@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Model\Starship;
+use App\Model\StarshipStatusEnum;
 use Psr\Log\LoggerInterface;
 
 class StarshipRepository
@@ -22,22 +23,23 @@ class StarshipRepository
                 'Stupid LeafyCruiser (COCO-0001)', 
                 'Garden', 
                 'Nadin Jardin', 
-                'taken over by Q') ,           
+                StarshipStatusEnum::IN_PROGRESS
+            ),           
             new Starship(
                 2,
                 'Stupid Espresso (COCO-1234-C)',
                 'Latte',
                 'Jane T. Quick!',
-                'repaired',
+                StarshipStatusEnum::COMPLETED
             ),
             new Starship(
                 3,
                 'Stupid Wanderlust (COCO-2024-W)',
                 'Delta Tourist',
                 'Kathryn Journeyway',
-                'under construction',
+                StarshipStatusEnum::WAIING
             )
-            ];
+        ];
     }
 
     public function find(int $id) : ?Starship {
