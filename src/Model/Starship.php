@@ -56,4 +56,18 @@ class Starship
         {
                 return $this->status;
         }
+
+        public function getStatusString()
+        {
+                return $this->status->value;
+        }
+
+        public function getStatusImageFilename(): string
+        {
+                return match ($this->status) {
+                        StarshipStatusEnum::WAIING => '/images/status-waiting.png',
+                        StarshipStatusEnum::IN_PROGRESS => '/images/status-in-progress.png',
+                        StarshipStatusEnum::COMPLETED => '/images/status-complete.png',
+                };
+        }
 }
